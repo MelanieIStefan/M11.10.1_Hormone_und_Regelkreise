@@ -1,14 +1,1240 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+\documentclass{beamer}	
+\mode<presentation>
+ 
+\usepackage{pdfpages}
+\usepackage{fancyvrb}
+\usepackage{chemarr}
 
-\title{M11.10.1_Hormone_und_Regelkreise}
-\author{melanie.stefan }
-\date{November 2022}
+\usepackage{amsmath}		%% mathematics typesetting
+\usepackage{amssymb}
+ 
+\usepackage{epigraph}   %% nice setting of quotations
+
+\usepackage{tabularx} %% allows to use row colours in tables
+
+\usepackage{ulem}
+
+\usepackage{booktabs}
+
+\usepackage{siunitx} %% tpyeset SI units
+
+\usepackage{CJKutf8} %% typeset Chinese characters
+
+\usepackage{pdfpages}%% include pdfs
+
+
+\usepackage{animate} %% show animated gifs
+
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+
+
+% Color and Theme. Can be changed. However, this one's quite nice.
+\usetheme{Madrid}
+\definecolor{theme}{rgb}{0.84,0,0.21}
+\usecolortheme[named=theme]{structure}
+
+
+%%  Title information
+\title[M11.10 Hormone, Regelkreise]{M11.10 Hormone und Regelkreise}
+\author[melanie.stefan@medicalschool-berlin.de]{M11.10 Hormone und Regelkreise}
+\institute[]{Prof. Melanie Stefan - melanie.stefan@medcialschool-berlin.de}
+\date{SoSe 2022}
+ 
+
+% Table of contents to pop up at the beginning of each section
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+ 
+\beamertemplatenavigationsymbolsempty
 
 \begin{document}
 
-\maketitle
 
-\section{Introduction}
+ 
+\begin{frame}
+
+ \maketitle 
+
+ 
+\vfill
+
+\includegraphics[width=0.4\textwidth]{/home/melanie/Work/pictures/logos/MSB_Medical_School_Berlin.png}
+
+\end{frame} 
+
+
+
+
+%% Hook: 
+\begin{frame}
+
+\begin{columns}[c]
+\begin{column}{5cm}
+\includegraphics[width=\textwidth]{/home/melanie/Work/pictures/metaphore/howareyou.jpg}
+
+\end{column}
+
+\pause
+
+\begin{column}{5cm}
+Hormone bestimmen:
+
+\begin{itemize}
+\item
+Wie es uns geht
+\item
+Wie wir existieren
+\end{itemize}
+
+\end{column}
+\end{columns}
+
+\end{frame}
+
+
+
+%% %% TLIA
+
+{
+  \usebackgroundtemplate{\includegraphics[width=1.1\paperwidth]{/home/melanie/Work/pictures/physiology/insulin_kit.jpg}}
+\begin{frame}
+
+$\,$\\[5cm]
+
+\Large{In dieser Vorlesung geht es um \\Hormone, und wie sie reguliert werden}
+
+
+\end{frame}
+}
+
+
+%% %% Learning Objectives
+ 
+\begin{frame}
+
+\frametitle{Nach dieser Vorlesung sollten Sie folgendes können}
+
+
+
+\begin{block}{Grundlagen:}
+\begin{itemize}
+\item
+den allgemeinen Aufbau hormoneller Regelkreise erklären und Beispiele geben
+\item
+Hormone unterteilen 
+\begin{itemize}
+\item
+ nach Wirkungsradius
+\item 
+nach chemischen Eigenschaften
+\end{itemize}
+\item
+das hypothalamisch-hypophysäre System beschreiben und erklären
+\item
+Hormone des hypothalamisch-hypophysären Systems aufzählen und ihre Aktivierungsmuster beschreiben
+\item
+die Wirkung, chemischen Eigenschaften und Regulierung von T3 und T4 beschreiben.
+\item
+Hormone der Nebennierenrinde klassifizieren und ihre Regulierung und Wirkung beschreiben 
+\item
+Regulierung und Wirkung von Insulin und Glukagon erklären
+
+\end{itemize}
+
+\end{block}
+
+
+\end{frame}
+
+
+
+\begin{frame}
+
+\frametitle{Nach dieser Vorlesung sollten Sie folgendes können}
+
+
+\begin{block}{Klinik:}
+\begin{itemize}
+\item
+Ursachen von Hormonstörungen benennen
+\item
+ Erkrankungen der Schilddrüse beschreiben und erklären
+\item
+ Morbus Cushing beschreiben und erklären
+\item
+Diabetes mellitus Typ 1 und 2 unterscheiden und erklären 
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+
+%% %% %% Main Body
+
+\section{Insulin und Glukagon}
+
+
+%% Review: Zuckerhaushalt
+\begin{frame}
+\frametitle{Kleine Erinnerung}
+
+\begin{columns}[c]
+
+\begin{column}{5cm}
+\begin{center}
+\includegraphics[width=\textwidth]{/home/melanie/Work/pictures/physiology/zuckerln.jpg}
+\end{center}
+\end{column}
+
+\begin{column}{5cm}
+
+Wie wird Glukose im Körper \dots
+
+\begin{itemize}
+\item
+Verwendet?
+\item
+Gespeichert?
+\item
+Bei Bedarf aus Speichern freigesetzt?
+\item
+Hergestellt?
+\end{itemize}
+
+
+\end{column}
+
+
+\end{columns}
+
+
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Kleine Erinnerung}
+
+\begin{columns}[c]
+
+\begin{column}{5cm}
+
+\begin{center}
+\includegraphics[width=\textwidth]{/home/melanie/Work/pictures/physiology/zuckerln.jpg}
+\end{center}
+
+\end{column}
+
+\begin{column}{5cm}
+
+Wie wird Glukose im Körper \dots
+
+\begin{itemize}
+\item
+Verwendet? \\ \textcolor{theme}{- Glykolyse zur Gewinnung von Energie}
+\item
+Gespeichert? \\ \textcolor{theme}{- Glykogensynthese}
+\item
+Bei Bedarf aus Speichern freigesetzt? \\  \textcolor{theme}{- Glykogenolyse}
+\item
+Hergestellt? \\ \textcolor{theme}{- Glukoneogenese aus Aminosäuren und Lipiden}
+\end{itemize}
+
+\pause
+Diese Vorgänge werden hormonell kontrolliert
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Insulin und Glukagon}
+
+%% Bild: Chemie, text: peptidhormon, langerhansdings
+\begin{columns}[t]
+\begin{column}{5cm}
+
+Insulin:
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/home/melanie/Work/pictures/physiology/insulin.png}
+\end{center}
+$\,$\\
+
+
+Polypeptidhormon \\[0.2 cm]
+
+Gebildet in den \textcolor{theme}{\textbf{B}}-Zellen der Pankreas \\
+(in den Langerhans-Inseln)
+
+\end{column}
+
+\begin{column}{5cm}
+
+Glukagon:
+
+\begin{center}
+\includegraphics[width=\textwidth]{/home/melanie/Work/pictures/physiology/glucagon.jpg}
+\end{center}
+$\,$\\[0.4 cm]
+
+
+Polypeptidhormon \\[0.2 cm]
+
+Gebildet in den \textcolor{theme}{\textbf{A}}-Zellen der Pankreas \\
+(in den Langerhans-Inseln)
+
+\end{column}
+\end{columns}
+
+\end{frame}
+
+
+
+
+%% Wirkung von Insulin
+\begin{frame}
+\frametitle{Insulin sorgt für die Verarbeitung von Glukose}
+
+Insulin fördert die Aufnahme von Glukose in Zellen, die Glykolyse und die Speicherung von Glukose.
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{/home/melanie/Work/pictures/physiology/Insulin_Wirkung.png}
+\end{center}
+
+
+
+\end{frame}
+
+
+
+%% Ausschüttung von Insulin
+\begin{frame}
+\frametitle{Glukose stimuliert die Freisetzung von Insulin}
+
+\begin{center}
+\includegraphics[width=\textwidth]{/home/melanie/Work/pictures/physiology/Insulinfreisetzung_schematisch.png}
+\end{center}
+
+
+\end{frame}
+
+
+%% Wirkung von Glukagon
+\begin{frame}
+\frametitle{Aber was ist, wenn wir Energie brauchen?}
+
+\pause
+
+\begin{itemize}
+\item
+Freisetzung von Glukagon aus den A-Zellen der Pankreas
+\item
+  The clue is in the name! \textbf{gluc}ose \textbf{agon}ist 
+\item
+Glukagon fördert Freisetzung von Glukose aus Glykogen (Glykogenolyse) und die Bildung von neuer Glukose (Glukoneogenese)
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Glukagon wirkt über einen G-Protein-gekoppelten Rezeptor}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{/home/melanie/Work/pictures/physiology/glucagon_pathway.png}
+\end{center}
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%&%%%%
+%% compiled to here
+%%%%%%%%%%%%%%%%%%&%%%%
+
+
+%% Wechselwirkung Glukagon, Insulin
+\begin{frame}
+\frametitle{Zusammenfassung}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/home/melanie/Work/pictures/physiology/insulin_glukagon.png}
+\end{center}
+
+
+\end{frame}
+
+
+%% Diabetes
+\begin{frame}
+\frametitle{Was kann schiefgehen?}
+
+Diabetes mellitus ist ein Insulinmangel. 
+
+\pause
+
+Exkurs Medizingeschichte: Schon vor 3500 Jahren konnten medizinische Gelehrte in Indien Diabetes mellitus mit Hilfe von Ameisen diagnostizieren. \pause \textcolor{theme}{Wie?}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{/home/melanie/Work/pictures/animals/ant.jpg}
+\end{center}
+
+
+
+%% Think-pair-share: ANTS
+
+
+\end{frame}
+
+
+%% Diabetes: Mehr details, Typ 1 + 2
+\begin{frame}
+\frametitle{Diabetes Mellitus Typ 1 und 2}
+
+\begin{center}
+\includegraphics[width=\textwidth]{/home/melanie/Work/pictures/physiology/Diabetes1-2.jpg}
+\end{center}
+
+
+\end{frame}
+
+
+%% Allgemeine Eigenschaften von Hormonen
+
+\section{Allgemeine Eigenschaften von Hormonen}
+
+\begin{frame}
+\frametitle{Was sind Hormone?}
+
+Hormone sind biochemische Botenstoffe. 
+
+\pause
+
+Sie können unterschieden werden nach:
+
+\begin{itemize}
+\item
+Wirkungsradius
+\item
+Gewebe, in dem sie gebildet werden
+\item
+Chemischen Eigenschaften
+\item
+Zellulärer Wirkungsweise
+\end{itemize}
+
+\pause
+
+Die Ausschüttung von Hormonen wird durch Regelkreise kontrolliert, bei denen oft negative Rückkopplungen eine Rolle spielen. \\
+
+\pause
+
+Der Hormonhaushalt kann aus mehreren Gründen gestört sein.
+
+\end{frame}
+
+%% %% autokrin - parakrin - endokrin
+\begin{frame}
+\frametitle{Hormone haben unterschiedliche Wirkungsradien}
+
+\begin{center}
+\includegraphics[width=\textwidth]{/home/melanie/Work/pictures/physiology/para_auto_endokrin.png}
+\end{center}
+
+
+\end{frame}
+
+
+%% %%wo gebildet: Drüsen oder nicht
+\begin{frame}
+\frametitle{Hormone werden oft in spezialisierten Drüsen gebildet}
+
+\begin{itemize}
+\item
+Glanduläre Hormone werden in speziellen Drüsen gebildet und daraus ausgeschüttet: Zirbeldrüse, Hypophyse, Schilddrüse, Thymus, Nebenniere, Pankreas, Gonaden
+\item
+Gewebshormone werden in anderen Geweben produziert (und wirken oft auf kürzere Distanzen) 
+\end{itemize}
+
+
+\end{frame}
+
+
+%% %% Chemische Struktur
+\begin{frame}
+\frametitle{Hormone sind keine einheitliche chemische Klasse}
+
+\begin{columns}[t]
+
+\begin{column}{5cm}
+\begin{block}{Peptid- und Proteohormone}
+
+\begin{itemize}
+\item
+Derivate von Aminosäuren oder Polypeptide
+\item
+Meist wasserlöslich
+\item
+Binden an Rezeptoren an der Zelloberfläche (z.B. G-Protein gekoppelte Rezeptoren)
+\item
+Wirken schnell
+\end{itemize}
+\end{block}
+
+\end{column}
+
+\begin{column}{5cm}
+
+\begin{block}{Steroidhormone}
+
+\begin{itemize}
+\item
+Derivate von Cholesterin
+\item
+Fettlöslich
+\item
+Wirken im Inneren der Zelle (Genexpression)
+\item
+Wirken langsam
+\end{itemize}
+\end{block}
+
+\end{column}
+
+
+\end{columns}
+
+
+
+\end{frame}
+
+
+
+%% %% Regelkreis
+\begin{frame}
+\frametitle{Hormone werden von Regelkreisen kontrolliert}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/home/melanie/Work/pictures/physiology/Regelkreis_Biologie.png}
+\end{center}
+
+\pause
+
+\textcolor{theme}{Wie sieht das bei Insulin aus?}
+
+
+\end{frame}
+
+
+%% %% Ursachen von Hormonstörungen
+\begin{frame}
+\frametitle{Hormonstörungen können viele Ursachen haben}
+
+Beispiel Insulin/Glukagon oder Beispiel allgemeiner Regelkreis. An welchen Stellen kann es Probleme geben?
+
+\pause
+
+\begin{itemize}
+\item
+Zerstörung des Drüsengewebes
+\item
+Verminderte Ausschüttung des Hormons
+\item
+Erhöhte Ausschüttung des Hormons
+\item
+Probleme mit dem Transport ins Zielgewebe
+\item
+Veränderungen des Hormonrezeptors (Anzahl, Sensitivität)
+\item
+Veränderungen im Signalweg ``stromabwärts'' vom Rezeptor
+\item
+Veränderungen im Regelkreis (z.B. durch Veränderungen des Sensors)
+\item
+Weil Regelkreise häufig miteinander kommunizieren, kann eine Veränderung in einem Regelkreis eine Veränderung in einem zweiten Regelkreis nach sich ziehen.
+\item
+\dots
+
+\end{itemize}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Zusammenfassung \\ (und optionaler Selbsttest: Insulin/Glukagon)}
+
+Hormone sind biochemische Botenstoffe. 
+
+Sie können unterschieden werden nach:
+
+\begin{itemize}
+\item
+Wirkungsradius
+\item
+Gewebe, in dem sie gebildet werden
+\item
+Chemischen Eigenschaften
+\item
+Zellulärer Wirkungsweise
+\end{itemize}
+
+Die Ausschüttung von Hormonen wird durch Regelkreise kontrolliert, bei denen oft negative Rückkopplungen eine Rolle spielen. \\
+
+Der Hormonhaushalt kann aus mehreren Gründen gestört sein.
+
+\end{frame}
+
+
+
+\section{Hypothalamus und Hypophyse}
+
+%% Überblick inkscape
+\begin{frame}
+\frametitle{Hypothalamus und Hypophyse sind an vielen Hormonwegen beteiligt}
+
+\begin{center}
+\includegraphics[width=\textwidth]{/home/melanie/Work/pictures/physiology/hormone.png}
+\end{center}
+\end{frame}
+
+
+%% Zusammenspiel zwischen Hypothalamus und Hypophyse
+\begin{frame}
+\frametitle{Hypothalamus}
+
+Der Hypothalamus produziert 
+
+\begin{itemize}
+\item
+Hormone, die die Freisetzung anderer Hormone aus der Adenohypophyse (Hypophysenvorderlappen) kontrollieren:
+\pause
+\begin{itemize}
+\item
+Releasing Hormone (Liberine): fördern die Freisetzung
+\item
+Release-inhibiting Hormone (Statine): hemmen die Freisetzung
+\end{itemize}
+\pause
+\item
+Hormone die in der Neurohypophyse (Hypophysenhinterlappen) gespeichert und daraus freigesetzt werden: Oxytocin, Vasopressin (Antidiuretisches Hormon, ADH)
+\end{itemize}
+
+
+\end{frame}
+
+
+%% Überblick funktionen, google image search mens magazine
+\begin{frame}
+\frametitle{Hypothalamus - Adenohypophyse - Gewebe}
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{/home/melanie/Work/pictures/physiology/hypothalamus_hypophyse_gewebe.jpg}
+\end{center}
+\end{frame}
+
+
+
+%%Fehlfunktionen
+
+\begin{frame}
+\frametitle{Hypophysäre Fehlfunktionen: Hormonüberschuss}
+
+\begin{center}
+\includegraphics[width=\textwidth]{/home/melanie/Work/pictures/physiology/hypophyse_hormonexzess.png}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Hypophysäre Fehlfunktionen: Hormonverminderung}
+
+\begin{center}
+\includegraphics[width=\textwidth]{/home/melanie/Work/pictures/physiology/Hypophyse_Hormonverminderung.png}
+\end{center}
+
+\end{frame}
+
+
+%% Heute aber nur
+\begin{frame}
+\frametitle{Wir konzentrieren uns heute auf 2 Bereiche:}
+
+\begin{itemize}
+\item
+Hormone der Nebennierenrinde
+\item
+Hormone der Schilddrüse
+\end{itemize}
+
+\end{frame}
+
+\section{Hormone der Nebennierenrinde}
+
+
+
+%% Überblick
+
+\begin{frame}
+\frametitle{In der Nebennierenrinde werden Steroidhormone gebildet}
+
+\begin{columns}[c]
+
+\begin{column}{6cm}
+\includegraphics[width=\textwidth]{/home/melanie/Work/pictures/physiology/Nebennierenrinde.png}
+\end{column}
+
+\begin{column}{5cm}
+
+Die Nebennierenrinde bildet drei Arten von Steroidhormonen:
+\begin{itemize}
+\item
+Glukokortikoide
+\item
+Mineralokortikoide
+\item
+Androgene
+\end{itemize}
+
+\pause
+
+Steroidhormone sind fettlöslich. Sie diffundieren durch die Zellmembran und binden an Rezeptoren im Zellkern, um die Transkription bestimmter Gene zu regulieren. Dadurch wirken sie langsamer als Peptidhormone. 
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%&%%%%
+%% compiled to here
+%%%%%%%%%%%%%%%%%%&%%%%
+
+
+%% Glukokortikoide
+\begin{frame}
+\frametitle{Glukokortikoide, z.B. Kortisol}
+
+\begin{columns}[c]
+
+\begin{column}{5cm}
+\begin{center}
+\includegraphics[width=\textwidth]{/home/melanie/Work/pictures/physiology/stress.jpg}
+\end{center}
+
+\end{column}
+
+\begin{column}{5cm}
+
+  
+Freisetzung bei Stress: \\[0.2 cm]
+
+\begin{tabular}{c}
+CRH, ADH \\
+ \(\downarrow\)\\
+ ACTH \\
+\(\downarrow\) \\
+ Kortisol\\[0.5 cm]
+\end{tabular}
+
+\pause
+
+Wirkung: Schnelle Bereitstellung von Energie (Flight-or-Fight response), Hemmung des Immunsystems (deshalb auch medizinisch eingesetzt, z.B. bei Autoimmunerkrankungen oder nach Organtransplantationen) \\
+
+\end{column}
+
+  
+
+\end{columns}
+
+
+\end{frame}
+
+
+
+%% %% Glucokortikoide und negatives Feedback
+\begin{frame}
+\frametitle{Glukokortikoide: Regelkreis}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{/home/melanie/Work/pictures/physiology/Glucocorticoids_Feedback_Loop.jpg}
+\end{center}
+
+
+\end{frame}
+
+
+
+%% Erkrankungen
+\begin{frame}
+\frametitle{Glukokortikoidüberschuss}
+
+\begin{columns}[c]
+
+\begin{column}{4cm}
+\begin{block}{Ursachen}
+\begin{itemize}
+\item
+Verstärkte ACTH-Ausschüttung durch die Hypophyse (Morbus Cushing)
+\item
+Manche Tumoren
+\item
+Folge von Kortisoltherapie
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{7cm}
+\begin{center}
+
+\includegraphics<1>[width=\textwidth]{/home/melanie/Work/pictures/physiology/glukokortikoid_ueberschuss_1.png}
+
+\includegraphics<2>[width=\textwidth]{/home/melanie/Work/pictures/physiology/glukokortikoid_ueberschuss_2.png}
+
+\includegraphics<3>[width=\textwidth]{/home/melanie/Work/pictures/physiology/glukokortikoid_ueberschuss_3.png}
+
+\includegraphics<4>[width=\textwidth]{/home/melanie/Work/pictures/physiology/glukokortikoid_ueberschuss_4.png}
+
+\includegraphics<5>[width=\textwidth]{/home/melanie/Work/pictures/physiology/glukokortikoid_ueberschuss_5.png}
+
+\end{center}
+
+
+
+\end{column}
+\end{columns}
+
+
+
+\end{frame}
+
+
+
+
+%% Mineralokortikoide
+
+\begin{frame}
+\frametitle{Mineralokortikoide: Beispiel: Aldosteron}
+
+\pause
+
+\begin{columns}[c]
+\begin{column}{3cm}
+
+\begin{center}
+ \includegraphics[width=\textwidth]{/home/melanie/Work/pictures/metaphore/wasserglas.jpg}
+\end{center}
+
+\end{column}
+
+\begin{column}{7cm}
+\begin{itemize}
+\item
+Bei Wassermangel wird antidiuretisches Hormon (ADH) aus der Neurohypophyse ausgeschüttet
+\pause
+\item
+In der Nebennierenrinde bewirkt ADH Ausschüttung von Aldosteron
+\pause
+\item
+Aldosteron fördert die Konservierung von Natrium in der Niere
+\pause
+\item
+Dadurch wird Wasser zurückgehalten, das Blutvolumen steigt
+\end{itemize}
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+
+
+%% \item
+%% Androgene
+
+\begin{frame}
+\frametitle{Androgene}
+
+\pause
+
+\begin{itemize}
+\item
+ACTH löst die Produktion von DHEA (Dehydro-epi-andro-steron) in der Nebennierenrinde aus
+\item 
+Es gibt allerdings \emph{kein} negatives Feedback von DHEA zurück zur Aktivierung von ACTH!
+\pause
+\item
+DHEA ist nicht selber aktiv sondern wird in Gonaden weiter verarbeitet: 
+\end{itemize}
+
+\begin{columns}[t]
+\begin{column}{5cm}
+\begin{block}{Im Hoden:}
+Umwandlung von DHEA zu Testosteron\\
+Umwandlung von Testosteron zu Dihydrotestosteron \\
+\end{block}
+\end{column}
+
+
+\begin{column}{5cm}
+\begin{block}{Im Ovar:}
+Zusätzliche Produktion von DHEA \\
+Umwandlung von DHEA zu Testosteron\\
+Umwandlung von Testosteron in Östradiol \\
+\end{block}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+
+\section{Hormone der Schilddrüse}
+
+
+
+%% Schilddrüse: Funktion
+
+
+
+\begin{frame}
+\frametitle{Die Schilddrüse ist wichtig für Energiestoffwechsel, Zellwachstum und Kalziumhaushalt}
+
+\begin{columns}[c]
+\begin{column}{5cm}
+\begin{itemize}
+\item
+Bildung der \textcolor{theme}{Schilddrüsenhormone}:\\
+ Triiodthyronin (T3) und Thyroxin (T4): \\
+Energiestoffwechsel, Zellwachstum
+\item
+Bildung von Calcitonin: \\ Kalziumhaushalt und Knochenstabilität
+
+\end{itemize}
+
+\end{column}
+
+\begin{column}{5cm}
+
+\includegraphics[width=\textwidth]{/home/melanie/Work/pictures/physiology/Thyroid.jpg}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+\frametitle{Chemische Eigenschaften von Schilddrüsenhormonen}
+
+
+
+\begin{columns}[c]
+\begin{column}{5cm}
+\begin{center}
+\includegraphics[width=\textwidth]{/home/melanie/Work/pictures/chemistry/Triiodthyronin.png}
+\end{center}
+\end{column}
+\begin{column}{5cm}
+Triiodthyronin (T3) und Thyroxin (T4) sind Tyrosin-Derivate mit 3 bzw. 4 gebundenen Iod-Atomen \\[0.2 cm]
+\pause
+
+Obwohl sie Derivate einer Aminosäure sind, verhalten sie sich ein bisschen wie Steroidhormone: Wirken an Rezeptoren im Inneren der Zelle und regulieren die Expression bestimmter Gene.  
+
+\end{column}
+\end{columns}
+
+\end{frame}
+
+
+
+%% %% %% Schilddrüse: Regelkreis
+\begin{frame}
+\frametitle{Schilddrüse: Regelkreis}
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{/home/melanie/Work/pictures/physiology/Schilddruese_Regelkreis.jpg}
+\end{center}
+
+
+\end{frame}
+
+
+
+%% %% %% Erkrankungen
+
+\begin{frame}
+\frametitle{Erkrankungen}
+
+Was könnten die Auswirkungen einer Schilddrüsenunterfunktion und -überfunktion sein?
+
+\pause
+
+\begin{columns}[t]
+\begin{column}{5cm}
+\begin{block}{Unterfunktion}
+Eingeschränkte körperliche und geistige Entwicklung (bei Kindern)\\
+Verlangsamter Stoffwechsel \\
+Müdigkeit \\
+Kälteempfindlichkeit \\
+Verstopfung
+\end{block}
+\end{column}
+
+\begin{column}{5cm}
+\begin{block}{Überfunktion}
+Erhöhte Körpertemperatur \\
+Gesteigerte Herzfrequenz \\
+Rastlosigkeit \\
+Häufig Durchfall 
+\end{block}
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Hypophysäre Fehlfunktionen: Hormonüberschuss}
+
+\begin{center}
+\includegraphics[width=\textwidth]{/home/melanie/Work/pictures/physiology/hypophyse_hormonexzess.png}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Hypophysäre Fehlfunktionen: Hormonverminderung}
+
+\begin{center}
+\includegraphics[width=\textwidth]{/home/melanie/Work/pictures/physiology/Hypophyse_Hormonverminderung.png}
+\end{center}
+
+\end{frame}
+
+
+%% %% %% %% Review
+
+\begin{frame}
+
+\frametitle{Jetzt* sollten Sie folgendes können}
+
+
+
+\begin{block}{Grundlagen:}
+\begin{itemize}
+\item
+den allgemeinen Aufbau hormoneller Regelkreise erklären und Beispiele geben
+\item
+Hormone unterteilen 
+\begin{itemize}
+\item
+ nach Wirkungsradius
+\item 
+nach chemischen Eigenschaften
+\end{itemize}
+\item
+das hypothalamisch-hypophysäre System beschreiben und erklären
+\item
+Hormone des hypothalamisch-hypophysären Systems aufzählen und ihre Aktivierungsmuster beschreiben
+\item
+die Wirkung, chemischen Eigenschaften und Regulierung von T3 und T4 beschreiben.
+\item
+Hormone der Nebennierenrinde klassifizieren und ihre Regulierung und Wirkung beschreiben 
+\item
+Regulierung und Wirkung von Insulin und Glukagon erklären
+
+\end{itemize}
+
+\end{block}
+
+
+\end{frame}
+
+
+
+\begin{frame}
+
+\frametitle{Jetzt* sollten Sie folgendes können}
+
+
+\begin{block}{Klinik:}
+\begin{itemize}
+\item
+Ursachen von Hormonstörungen benennen
+\item
+ Erkrankungen der Schilddrüse beschreiben und erklären
+\item
+ Morbus Cushing beschreiben und erklären
+\item
+Diabetes mellitus Typ 1 und 2 unterscheiden und erklären 
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+
+
+
+
+%% %% %% %% Feedbackhinweisblock
+
+\begin{frame}
+\frametitle{Danke für Ihr Feedback!}
+
+\begin{columns}[c]
+
+\begin{column}{6cm}
+\begin{center}
+ \includegraphics[width=\textwidth]{/home/melanie/Work/pictures/metaphore/smilie_balloons.jpg}
+\end{center}
+
+\end{column}
+
+\begin{column}{4cm}
+
+
+\begin{center}
+ \includegraphics[width=\textwidth]{feedback_QR.png}
+\end{center}
+\end{column}
+
+
+\end{columns}
+
+\end{frame}
+
+
+
+%% %% %% Bildnachweis
+\begin{frame}
+\frametitle{Bildnachweis}
+
+\begin{tiny}
+ 
+\begin{itemize}
+
+\item
+Blutzuckermessgerät, Insulin-Spritze, Tabletten. Photo by \href{https://unsplash.com/@towfiqu999999?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText}{Towfiqu barbhuiya} \href{https://unsplash.com/s/photos/insulin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText}{Unsplash}
+  
+\item
+Diabetes Typ 1 und 2. BMBF-Broschüre ``Stoffwechselforschung''. 2010. Aufgerufen hier: \url{https://www.gesundheitsforschung-bmbf.de/de/jung-und-trotzdem-diabetiker.php}
+
+\item
+Glukagon. Truthortruth, CC BY-SA 3.0 \url{https://creativecommons.org/licenses/by-sa/3.0}, via Wikimedia Commons
+
+\item
+Häuserwand mit der Aufschrift ``How are you, really?'' Photo by \href{https://unsplash.com/@finnnyc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText}{Finn} on \href{https://unsplash.com/s/photos/hormones?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText}{Unsplash}
+  
+
+\item
+Hormone der endokrinen Drüsen im Nervensystem. Bearbeitung (deutsche Übersetzung) der folgenden Abbildung: By LadyofHats - made myself based on the information found on the wikipedia article, Public Domain, \url{https://commons.wikimedia.org/w/index.php?curid=11541118}
+
+\item
+Hormone der Nebennierenrinde. Aus: Florian Lang, Michael Föller. Nebennierenrindenhormone. Springer-Verlag GmbH Deutschland, ein Teil von Springer Nature 2019. In: R. Brandes et al. (Hrsg.), Physiologie des Menschen, Springer-Lehrbuch \url{https://doi.org/10.1007/978-3-662-56468-4_77}
+
+
+\item
+Hypophysäre Fehlfunktionen. Arastéh K, Baenkler H, Bieber C, Brandt R, Chatterjee T, Dill T, Ditting T, Duckert M, Eich W et al., ed.  Duale Reihe Innere Medizin. 4., überarbeitete Auflage. Stuttgart: Thieme; 2018. doi:10.1055/b-005-145255
+
+\item
+Insulin. Von Anmoll - Eigenes Werk mittels: BALLView, CC BY-SA 2.0 de, \url{https://commons.wikimedia.org/w/index.php?curid=9021528}
+
+\item
+Insulinausschüttung. Der ursprünglich hochladende Benutzer war Prisonblues in der Wikipedia auf Englisch - Übertragen aus en.wikipedia nach Commons., CC BY-SA 3.0, \url{https://commons.wikimedia.org/w/index.php?curid=1538766}
+
+\item
+Kortisol. Von NEUROtiker - Eigenes Werk, Gemeinfrei, \url{https://commons.wikimedia.org/w/index.php?curid=2319372}
+
+%% all lectures
+\item
+Logo der MSB. MSB Medical School Berlin, Public Domain, via Wikimedia Commons
+%%%%%%%%%%%%
+
+
+%% all lectures
+\item
+Luftballons mit frohen und traurigen Smilies. Photo by \href{https://unsplash.com/@artbyhybrid?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText}{Hybrid} on \href{https://unsplash.com/s/photos/feedback?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText}{Unsplash}
+%%%%%%%%%%%
+\end{itemize}
+\end{tiny}
+\end{frame}
+
+\begin{frame}
+\frametitle{Bildnachweis}
+
+\begin{tiny}
+\begin{itemize}
+
+\item
+Parakrine, autokrine und endokrine Hormone. Eigenes Werk, CC BY-SA 4.0, 2022.
+
+\item
+Regelkreis allgemein. Von Sciencia58 - Eigenes Werk, CC BY-SA 4.0, \url{https://commons.wikimedia.org/w/index.php?curid=96633159}
+
+
+\item
+Regelkreis der Glucocorticoide. OpenStax College, CC BY 3.0 \url{https://creativecommons.org/licenses/by/3.0}, via Wikimedia Commons
+
+\item
+Regelkreis der Schilddrüsenhormone. Von Geo-Science-International - Eigenes Werk, CC BY-SA 4.0, \url{https://commons.wikimedia.org/w/index.php?curid=47357720}
+
+
+
+\item
+Regulierung von Insulin und Glukagon. Aus: Florian Lang, Michael Föller. Pankreashormone. Springer-Verlag GmbH Deutschland, ein Teil von Springer Nature 2019 In: R. Brandes et al. (Hrsg.), Physiologie des Menschen, Springer-Lehrbuch \url{https://doi.org/10.1007/978-3-662-56468-4_76}
+
+
+\item
+Schilddrüse. CFCF, CC BY-SA 4.0 \url{https://creativecommons.org/licenses/by-sa/4.0}, via Wikimedia Commons
+
+\item
+Signalwege Hypothalamus - Hypophysenvorderlappen - Gewebe - Funktion.  Aus: Schöfl C. Neuroendokrine Dysfunktion nach Schädelhirntrauma und Subarachnoidalblutung. \emph{Blickpunkt der Mann} 2008; 6 (Sonderheft 1): 22-24
+
+\item
+Stress. Photo by \href{https://unsplash.com/@nublson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText}{Nubelson Fernandes} on \href{https://unsplash.com/s/photos/stress?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText}{Unsplash}
+
+\item
+Sü\ss igkeiten. Photo by \href{https://unsplash.com/es/@fluffmedia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText}{Deidre Schlabs} on \href{https://unsplash.com/s/photos/sweets?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText}{Unsplash}
+  
+
+\item
+Triiodthyronin. Von Jü - Eigenes Werk, Gemeinfrei, \url{https://commons.wikimedia.org/w/index.php?curid=39939375}
+
+
+\item
+Wasserglas. Photo by \href{https://unsplash.com/@nicoruiz01981?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText}{Nicolas Ruiz} on \href{https://unsplash.com/s/photos/water-glass?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText}{Unsplash}
+  
+
+\item
+
+Wirkung von Glukagon. Von Yikrazuul - Eigenes Werk, CC BY-SA 3.0, \url{https://commons.wikimedia.org/w/index.php?curid=9532952}
+
+\item
+Wirkung von Insulin - Meine eigene Arbeit, mit BioRender, 2022.
+
+\end{itemize}
+\end{tiny}
+\end{frame}
+
+
 
 \end{document}
